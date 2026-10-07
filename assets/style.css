@@ -158,3 +158,4 @@ h2{font-size:clamp(26px,5vw,38px);margin-bottom:28px}
 .slide p{font-size:17px;color:var(--text)}
 @media(max-width:480px){.slides{min-height:230px}}
 .offer .btn{width:100%;max-width:280px;text-align:center}
+.offers.one{grid-template-columns:1fr;width:100%;max-width:520px;margin-left:auto;margin-right:auto}
