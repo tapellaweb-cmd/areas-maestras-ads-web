@@ -56,16 +56,31 @@ src="https://www.facebook.com/tr?id=4065911757006473&ev=PageView&noscript=1"
     <span class="eyebrow center">Lo que se trabaja</span>
     <h2 class="center">Cinco áreas. Una sola persona: vos.</h2>
 
-    <div class="vos-badge"><span>VOS</span></div>
-
-    <div class="cards five">
-      <div class="card pillar"><h3>Combustible</h3><p>Lo que ganás no te rinde, o todavía no sabés cómo generar lo que necesitás. El dinero y tu energía son el combustible de todo lo demás.</p></div>
-      <div class="card pillar"><h3>Rumbo</h3><p>Lo que creíste que era tu camino ya no te resuena, o quizás sea tu camino y solo necesites reafirmarlo.</p></div>
-      <div class="card pillar"><h3>Arranque</h3><p>Le ponés el hombro a todo y no arranca, o todavía no te animás a empezar. No sabés si seguir, largar todo o dar el primer paso.</p></div>
-      <div class="card pillar"><h3>Confianza</h3><p>Te ahogás en un vaso de agua: sentís que podés más, pero algo te frena al decidir.</p></div>
-      <div class="card pillar"><h3>Vínculos</h3><p>Cedés en lo que te incomoda para quedar bien con los demás, aunque ellos no hacen lo mismo por vos.</p></div>
+    <div class="pent">
+      <svg class="radial" viewBox="0 0 420 340" aria-hidden="false">
+        <g class="r-lines"><line x1="210" y1="185" x2="210" y2="50"/><line x1="210" y1="185" x2="338" y2="143"/><line x1="210" y1="185" x2="289" y2="294"/><line x1="210" y1="185" x2="131" y2="294"/><line x1="210" y1="185" x2="82" y2="143"/></g>
+        <circle class="r-vos" cx="210" cy="185" r="42"/><text class="r-vos-t" x="210" y="193">VOS</text>
+        <g class="node" data-i="0" tabindex="0" role="button" aria-label="Combustible"><circle cx="210" cy="50" r="46"/><text x="210" y="55">Combustible</text></g><g class="node" data-i="1" tabindex="0" role="button" aria-label="Rumbo"><circle cx="338" cy="143" r="46"/><text x="338" y="148">Rumbo</text></g><g class="node" data-i="2" tabindex="0" role="button" aria-label="Arranque"><circle cx="289" cy="294" r="46"/><text x="289" y="299">Arranque</text></g><g class="node" data-i="3" tabindex="0" role="button" aria-label="Confianza"><circle cx="131" cy="294" r="46"/><text x="131" y="299">Confianza</text></g><g class="node" data-i="4" tabindex="0" role="button" aria-label="Vínculos"><circle cx="82" cy="143" r="46"/><text x="82" y="148">Vínculos</text></g>
+      </svg>
+      <div class="slides card" aria-live="polite"><div class="slide on" data-i="0"><h3>Combustible</h3><p>Lo que ganás no te rinde, o todavía no sabés cómo generar lo que necesitás. El dinero y tu energía son el combustible de todo lo demás.</p></div><div class="slide" data-i="1"><h3>Rumbo</h3><p>Lo que creíste que era tu camino ya no te resuena, o quizás sea tu camino y solo necesites reafirmarlo.</p></div><div class="slide" data-i="2"><h3>Arranque</h3><p>Le ponés el hombro a todo y no arranca, o todavía no te animás a empezar. No sabés si seguir, largar todo o dar el primer paso.</p></div><div class="slide" data-i="3"><h3>Confianza</h3><p>Te ahogás en un vaso de agua: sentís que podés más, pero algo te frena al decidir.</p></div><div class="slide" data-i="4"><h3>Vínculos</h3><p>Cedés en lo que te incomoda para quedar bien con los demás, aunque ellos no hacen lo mismo por vos.</p></div></div>
     </div>
-  </div>
+    <script>
+    (function(){
+      var box=document.querySelector('.pent'); if(!box) return;
+      var nodes=box.querySelectorAll('.node'), slides=box.querySelectorAll('.slide'), cur=0, t;
+      var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function show(i){cur=i;nodes.forEach(function(n,k){n.classList.toggle('on',k===i)});slides.forEach(function(s,k){s.classList.toggle('on',k===i)});}
+      function play(){ if(reduce) return; clearInterval(t); t=setInterval(function(){show((cur+1)%5)},3000); }
+      nodes.forEach(function(n,k){
+        n.addEventListener('click',function(){show(k);play();});
+        n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();show(k);play();}});
+      });
+      box.addEventListener('mouseenter',function(){clearInterval(t)});
+      box.addEventListener('mouseleave',play);
+      show(0); play();
+    })();
+    </script>
+    </div>
 </section>
 
 <section>
@@ -138,32 +153,42 @@ src="https://www.facebook.com/tr?id=4065911757006473&ev=PageView&noscript=1"
 </section>
 
 <section id="empezar">
-  <div class="container cta-box">
-    <span class="eyebrow">Empezá hoy</span>
-    <h2>Áreas Maestras</h2>
-    <ul class="cta-list">
-      <li>✔ Presentación + 12 módulos en video, organizados en 5 áreas</li>
-      <li>✔ Actividades y tests descargables</li>
-      <li>✔ Lo hacés cuando quieras, las veces que quieras</li>
-    </ul>
-    <div class="price-box">
-      <span class="price-strike">$150.000</span>
-      <span class="price">$50.000 ARS</span>
-      <span class="price-note">precio de lanzamiento · pago único</span>
+  <div class="container">
+    <span class="eyebrow center">Empezá hoy</span>
+    <h2 class="center">Elegí cómo querés avanzar</h2>
+    <div class="offers">
+      <div class="offer offer-main">
+        <span class="offer-tag">Curso online</span>
+        <h3>Áreas Maestras</h3>
+        <ul class="cta-list">
+          <li>✔ Presentación + 12 módulos en video, organizados en 5 áreas</li>
+          <li>✔ Actividades y tests descargables</li>
+          <li>✔ Lo hacés cuando quieras, las veces que quieras</li>
+        </ul>
+        <div class="price-box">
+          <span class="price-strike">$150.000</span>
+          <span class="price">$50.000 ARS</span>
+          <span class="price-note">precio de lanzamiento · pago único</span>
+        </div>
+        <a href="https://jorgetapellacoach.systeme.io/4a74d709" class="btn btn-lg" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">Quiero el curso →</a>
+        <p class="secure">Pago 100% seguro</p>
+      </div>
+      <div class="offer offer-mentor">
+        <span class="offer-tag">Mentoría</span>
+        <h3>Mentoría Áreas Maestras</h3>
+        <ul class="cta-list">
+          <li>✔ Trabajás tu caso conmigo, en vivo</li>
+          <li>✔ Para quien quiere ir más allá del curso</li>
+          <li>✔ Comunicación vía WhatsApp</li>
+        </ul>
+        <div class="price-box">
+          <span class="price">$120.000 ARS</span>
+          <span class="price-note">inversión mínima</span>
+        </div>
+        <a href="https://wa.me/5492494549463?text=Hola%20Jorge%2C%20quiero%20info%20sobre%20la%20mentor%C3%ADa%20de%20%C3%81reas%20Maestras" class="btn btn-lg" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','Contact')">Quiero la mentoría →</a>
+        <p class="secure">Te comunicás directo a mi WhatsApp</p>
+      </div>
     </div>
-    <div><a href="https://jorgetapellacoach.systeme.io/4a74d709" class="btn btn-lg" onclick="typeof fbq==='function'&&fbq('track','InitiateCheckout')">Quiero empezar →</a></div>
-    <p class="secure">Pago 100% seguro</p>
-  </div>
-
-  <div class="container mentor-box">
-    <h3 class="center mentor-title">¿Querés ir más allá del curso?</h3>
-    <p style="color:var(--text-dim);font-size:15px;max-width:400px;margin:0 auto 24px">Si ya sabés que tu caso necesita algo más personalizado, consultá por la mentoría 1 a 1.</p>
-    <div class="price-box">
-      <span class="price">$120.000 ARS</span>
-      <span class="price-note">inversión mínima</span>
-    </div>
-    <a href="https://wa.me/5492494549463?text=Hola%20Jorge%2C%20quiero%20info%20sobre%20la%20mentor%C3%ADa%20personalizada%20de%20%C3%81reas%20Maestras" class="btn btn-mentor" target="_blank" rel="noopener" onclick="typeof fbq==='function'&&fbq('track','Contact')">Consultar por la mentoría</a>
-    <p class="mentor-note">Te comunicás directo a mi WhatsApp</p>
   </div>
 </section>
 
